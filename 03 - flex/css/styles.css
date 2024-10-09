@@ -1,0 +1,85 @@
+/* Reseteo estilos */
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+    font-family: Verdana,Tahoma, sans-serif;
+}
+
+.container {
+    border: 1px solid black;
+}
+
+.container__title, .container__subtitle {
+    text-align: center;
+    margin: 10px;
+    padding: 10px;
+}
+
+.container__subtitle {
+    border-bottom: 1px solid black;
+}
+
+.container__layout {
+    /* float: right; Nos lo flota a la izquierda hasta que no quepa más */
+    border: 2px solid green;
+    width: 100%;
+    height: 700px;
+    display: flex; /* Este display con flex es equivalente a float: left */   
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-around;
+    /* align-items: center; */
+    align-self: auto;
+    
+    /* flex-flow: row wrap; equivalente flex-direction: row; flex-wrap: wrap  */
+}
+
+.layout__box {  
+    /* float: left; */
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    border: 2px solid black;
+    margin: 5px;
+    width: 22%;
+    /* flex-grow: 1; Todas las cajas tienen la misma importancia */
+    flex-basis: calc(100% / 4); /* Asigna un tamaño especifico. Es más para hacer calculos con el tema del responsivo. */
+    align-self: center;
+}
+
+.layout__box--red {
+    background-color: red;
+    /* flex-grow: 5; La roja va a tener más "importancia". LE quita espacio a las otras */
+    /* order: 2; Para trabajar con order hay qe aplciarselo a todas las cjaas */
+    flex-basis: calc((100% / 4) + 100px); /* Le estamos dando un poco más de tamaño al rojo, pero el resto mantienen el tamaño */
+    align-self: self-end;
+}
+
+.layout__box--yellow {
+    background-color: yellow;
+    /* order: 4; */
+}
+
+.layout__box--green {
+    background-color: green;
+    /* order: 1; */
+}
+
+.layout__box--orange {
+    background-color: orange;
+    /* order: 3; */
+}
+
+.layout__box--blue {
+    background-color: blue;
+    /* order: 6; */
+}
+
+.layout__box--cyan {
+    background-color: cyan;
+    /* order: 5; */
+}
+

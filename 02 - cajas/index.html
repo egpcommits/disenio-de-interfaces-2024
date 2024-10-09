@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicación - Modelo cajas</title>
+
+    <link rel="stylesheet" href="css/styles-jose.css">
+
+<!--  Ejercicio Resumen - Cajas / Animaciones y Transiciones
+1.- Crear estructura html que cuente con un Contenedor General, cabecera, menú, barra lateral, sección de contenido principal, elementos dentro del contenedor principal y footer 
+2.- Todo el contenido debe estar dentro del contenedor general y su ancho será de 1200px
+3.- Header debe ocupar el 100% del ancho y tener un texto grande. 
+4.- Menú debe tener los elementos uno al lado del otro. Debe disponer de un menú desplegable en diversos elementos.
+5.- El contenido principal debe tener un ancho del 70%. 
+6.- El contenido dentro del contenedor principal debe ser una cuadrícula con cuatro líneas de 2 cajas.
+7.- La barra lateral debe tener un ancho del 30%
+8.- El footer debe tener un ancho del 100% y estar al final del todo.
+
+Aspectos adicionales:
+- Caja Libre 1 y 2 (repasar z-index)
+- Caja Fija a la izquierda
+- Animaciones y Transiciones (formulario y caja) 
+-->
+
+</head>
+<body>
+    <!-- 1.- Crear estructura html que cuente con un Contenedor General, cabecera, menú, barra lateral, sección de contenido principal, elementos dentro del contenedor principal y footer -->
+     <main class="container">
+        <!-- Cabecera -->
+        <header class="header">
+            <h1 class="header__title">Modelo de cajas</h1>
+            <h2 class="header__subtitle">CSS Avanzado</h2>
+        </header>
+        <!-- Barra de navegación -->
+         <nav class = "navbar">
+            <ul class="navbar__list">
+                <!-- li.list__item*4 -->
+                <li class="list__item"><a href="#">Inicio</a></li>
+                <li class="list__item">
+                    <a href="#">Contenido</a>
+                    <ul class = "item__sublist">
+                        <li class = "sublist__item">Películas</li>
+                        <li class = "sublist__item">Juegos</li>
+                    </ul>
+                </li>
+                <li class="list__item">
+                    <a href="#">Blog</a>
+                    <ul class = "item__sublist">
+                        <li class = "sublist__item">Películas</li>
+                        <li class = "sublist__item">Juegos</li>
+                    </ul>
+                </li>
+                <li class="list__item"><a href="#">Contacto</a></li>
+            </ul>
+         </nav>
+        <!-- Inicio sección principal -->
+         <section class="content">
+            <h1 class="content__title">Contenido</h1>
+            <div class="content__box">
+                <p class="box__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi possimus molestiae nostrum voluptatem officiis modi eveniet necessitatibus, accusantium odit officia a illum veniam commodi ratione nihil labore numquam quibusdam ut temporibus dolorem eius quasi. Quasi, quod exercitationem placeat iusto nihil voluptatem quisquam fugiat, recusandae architecto laborum sint assumenda dolorum.</p>
+            </div>
+            <div class="content__box">
+                <p class="box__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi possimus molestiae nostrum voluptatem officiis modi eveniet necessitatibus, accusantium odit officia a illum veniam commodi ratione nihil labore numquam quibusdam ut temporibus dolorem eius quasi. Quasi, quod exercitationem placeat iusto nihil voluptatem quisquam fugiat, recusandae architecto laborum sint assumenda dolorum.</p>
+            </div>
+            <div class="content__box content__box--sombra">
+                <p class="box__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi possimus molestiae nostrum voluptatem officiis modi eveniet necessitatibus, accusantium odit officia a illum veniam commodi ratione nihil labore numquam quibusdam ut temporibus dolorem eius quasi. Quasi, quod exercitationem placeat iusto nihil voluptatem quisquam fugiat, recusandae architecto laborum sint assumenda dolorum.</p>
+            </div>
+            <div class="content__box content__box--sombra">
+                <p class="box__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi possimus molestiae nostrum voluptatem officiis modi eveniet necessitatibus, accusantium odit officia a illum veniam commodi ratione nihil labore numquam quibusdam ut temporibus dolorem eius quasi. Quasi, quod exercitationem placeat iusto nihil voluptatem quisquam fugiat, recusandae architecto laborum sint assumenda dolorum.</p>
+            </div>
+            <div class="content__box content__box--redondo">
+                <p class="box__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi possimus molestiae nostrum voluptatem officiis modi eveniet necessitatibus, accusantium odit officia a illum veniam commodi ratione nihil labore numquam quibusdam ut temporibus dolorem eius quasi. Quasi, quod exercitationem placeat iusto nihil voluptatem quisquam fugiat, recusandae architecto laborum sint assumenda dolorum.</p>
+            </div>
+            <div class="content__box content__box--redondo">
+                <p class="box__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi possimus molestiae nostrum voluptatem officiis modi eveniet necessitatibus, accusantium odit officia a illum veniam commodi ratione nihil labore numquam quibusdam ut temporibus dolorem eius quasi. Quasi, quod exercitationem placeat iusto nihil voluptatem quisquam fugiat, recusandae architecto laborum sint assumenda dolorum.</p>
+            </div>
+            <div class="content__box content__box--shadows1">
+                <p class="box__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi possimus molestiae nostrum voluptatem officiis modi eveniet necessitatibus, accusantium odit officia a illum veniam commodi ratione nihil labore numquam quibusdam ut temporibus dolorem eius quasi. Quasi, quod exercitationem placeat iusto nihil voluptatem quisquam fugiat, recusandae architecto laborum sint assumenda dolorum.</p>
+            </div>
+            <div class="content__box content__box--3d">
+                <p class="box__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi possimus molestiae nostrum voluptatem officiis modi eveniet necessitatibus, accusantium odit officia a illum veniam commodi ratione nihil labore numquam quibusdam ut temporibus dolorem eius quasi. Quasi, quod exercitationem placeat iusto nihil voluptatem quisquam fugiat, recusandae architecto laborum sint assumenda dolorum.</p>
+            </div>
+            <div class="content__box content__box--shadowsMultiple">
+                <p class="box__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi possimus molestiae nostrum voluptatem officiis modi eveniet necessitatibus, accusantium odit officia a illum veniam commodi ratione nihil labore numquam quibusdam ut temporibus dolorem eius quasi. Quasi, quod exercitationem placeat iusto nihil voluptatem quisquam fugiat, recusandae architecto laborum sint assumenda dolorum.</p>
+            </div>
+            <div class="content__box content__box--shadowsMultiple2">
+                <p class="box__info">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente sequi possimus molestiae nostrum voluptatem officiis modi eveniet necessitatibus, accusantium odit officia a illum veniam commodi ratione nihil labore numquam quibusdam ut temporibus dolorem eius quasi. Quasi, quod exercitationem placeat iusto nihil voluptatem quisquam fugiat, recusandae architecto laborum sint assumenda dolorum.</p>
+            </div>
+         </section>
+         <!-- Caja lateral -->
+          <aside class="sidebar">
+            <h2 class="sidebar__title">Caja lateral</h2>
+            <p class="sidebar__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae deleniti, doloribus temporibus cumque eius numquam consectetur nostrum ad eligendi incidunt aspernatur, facilis iste minus facere aut dignissimos officiis repudiandae dolore nemo! Esse, necessitatibus. Perspiciatis, laboriosam omnis culpa delectus repellendus eum facere, unde numquam exercitationem veniam vel, ab tempora laudantium impedit.</p>
+            <p class="sidebar__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae deleniti, doloribus temporibus cumque eius numquam consectetur nostrum ad eligendi incidunt aspernatur, facilis iste minus facere aut dignissimos officiis repudiandae dolore nemo! Esse, necessitatibus. Perspiciatis, laboriosam omnis culpa delectus repellendus eum facere, unde numquam exercitationem veniam vel, ab tempora laudantium impedit.</p>
+            <p class="sidebar__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae deleniti, doloribus temporibus cumque eius numquam consectetur nostrum ad eligendi incidunt aspernatur, facilis iste minus facere aut dignissimos officiis repudiandae dolore nemo! Esse, necessitatibus. Perspiciatis, laboriosam omnis culpa delectus repellendus eum facere, unde numquam exercitationem veniam vel, ab tempora laudantium impedit.</p>
+            <p class="sidebar__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae deleniti, doloribus temporibus cumque eius numquam consectetur nostrum ad eligendi incidunt aspernatur, facilis iste minus facere aut dignissimos officiis repudiandae dolore nemo! Esse, necessitatibus. Perspiciatis, laboriosam omnis culpa delectus repellendus eum facere, unde numquam exercitationem veniam vel, ab tempora laudantium impedit.</p>
+            <p class="sidebar__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae deleniti, doloribus temporibus cumque eius numquam consectetur nostrum ad eligendi incidunt aspernatur, facilis iste minus facere aut dignissimos officiis repudiandae dolore nemo! Esse, necessitatibus. Perspiciatis, laboriosam omnis culpa delectus repellendus eum facere, unde numquam exercitationem veniam vel, ab tempora laudantium impedit.</p>
+          </aside>
+          <div class = "box__free box__free--1">
+            Soy libre 1
+         </div>
+         <div class = "box__free box__free--2">
+            Soy libre 2
+         </div>
+         <div class = "box__static">
+            Estoy Fija
+         </div>
+          <!-- Pie de página -->
+           <footer class="foot">Todos los derechos reservados &copy; Estela García Pintos</footer>
+     </main>
+     <p class="transformed">Girando</p>
+     <div class = "box__animated">
+        Me muevo...
+     </div>
+     <section class="box__container">
+        CAJA CONTENEDORA
+        <div class = "box__free box__free--3">
+            Soy libre 3
+        </div>
+        <div class = "box__free box__free--4">
+            Soy libre 4
+        </div>
+     </section>
+</body>
+</html>
