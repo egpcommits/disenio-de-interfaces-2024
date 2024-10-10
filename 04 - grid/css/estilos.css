@@ -29,15 +29,25 @@ body {
 
 .container__layout {
     display: grid;
-    /* grid-template-columns: 1fr 2fr 1fr; */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     /* grid-gap: 10px; Como si pusiesemos margin por todos lados. Se pueden usar tambien especificos para row y column */
-    row-gap: 10px;
-    column-gap: 10px;
-    grid-template-columns: calc(25% - 10px) calc(50% - 10px) calc(25% - 10px);
+    grid-row-gap: 10px;
+    grid-column-gap: 10px;
+
+    /* Estas tres formas son equivalentes */
+    /* grid-template-columns: calc(25% - 10px) calc(50% - 10px) calc(25% - 10px); */
+    /* grid-template-columns: 1fr 500pc 1fr; */
+    /* grid-template-columns: repeat(3, 1fr); */
+
+
+    grid-template-rows: 1fr 3fr 1fr 4fr;
+    height: 700px;
 }
 
 .layout__box {  
-    
+    font-size: 20px;
+    padding: 20px;
+    color: white;
 }
 
 .layout__box--red {
@@ -45,7 +55,7 @@ body {
     /* flex-grow: 5; La roja va a tener más "importancia". LE quita espacio a las otras */
     /* order: 2; Para trabajar con order hay qe aplciarselo a todas las cjaas */
     flex-basis: calc((100% / 4) + 100px); /* Le estamos dando un poco más de tamaño al rojo, pero el resto mantienen el tamaño */
-    align-self: self-end;
+    /* align-self: self-end; */
 }
 
 .layout__box--yellow {
@@ -71,6 +81,7 @@ body {
 .layout__box--black {
     background-color: black;
     color: white;
+    /* grid-column: 2 / 4; */
 }
 
 .layout__box--salmon {
@@ -79,8 +90,13 @@ body {
 
 .layout__box--pink {
     background-color: pink;
+    /*grid-column-start: 2; El start empieza en uno (pegado al lateral izquierdo
+    grid-column-end: 4;*/
+    grid-column: 2 / 4;
 }
 
 .layout__box--yellowGreen {
     background-color: yellowgreen;
+    grid-column-start: 1; /* El start empieza en uno (pegado al lateral izquierdo */
+    grid-column-end: 5; /* El end acaba en 4 (pegado al lateral derecho */
 }
