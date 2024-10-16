@@ -12,10 +12,81 @@ body {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     grid-template-rows: 120px 70px 2fr 70px;
+    /* Cabecera 120px, menu 70px, contenido 2fr, footer 70px. Los que estan en px van a tener un tamaño fijo, el de las dos fracciones se va a adaptar. */
 
-    grid-template-areas: /* 4 fracciones */
+
+    /*
+    CABECERA arriba del tdo y que ocupe el 100%
+    MENU debajo de la cabecera y que ocupe el 100%
+    CONTENIDO debajo del menu y que ocupe el 80%
+    LATERAL debajo del menu y a la derecha del contenido
+    FOOTER abajo del todo y que ocupe 100%
+    */
+
+    grid-template-areas: /* 5 fracciones */
         "cabecera cabecera cabecera cabecera cabecera"
         "menu menu menu menu menu"
         "contenido contenido contenido contenido lateral" /* contenido 80% y el 20% restante es para lateral */
         "footer footer footer footer footer";
+
+    grid-column-gap: 10px;
+    width: 80%;
+    /* height: 100%; */
+    height: 95vh; /*100% de la altura de nuestro navegador.*/
+    margin: 0 auto;
+    border: 1px solid black;
+}
+
+.website__header {
+    grid-area: cabecera; /* Se le "asigna" la cabecera que hemos marcado arriba */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: paleturquoise;
+}
+
+.website__menu {
+    grid-area: menu;
+    background-color: aliceblue;
+    line-height: 70px;
+}
+
+.menu__list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    list-style: none;    
+}
+
+.list__item a {
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.website__content {
+    grid-area: contenido;
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 20px; /* El grid grap SI se cuenta al hacer los calcuos del flex basis*/
+    padding: 20px; /* El padding no ocupa en el 100% porque simplemente mete para adentro el contenido */
+    background-color: antiquewhite;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.content__article {
+    flex-basis: calc(100% / 4 - 20px); /* -20px porque el grid gap ocupa eso, entonces hay que reajustar. */
+    border: 1px solid black;   
+}
+
+.website__sidebar {
+    grid-area: lateral;
+    background-color: azure;
+}
+
+.website__footer {
+    grid-area: footer;
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
