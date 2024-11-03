@@ -240,8 +240,16 @@ body{
 }
 
 /* Tarjetas */
+/* Este hace falta no?*/
+.content__cards {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+}
+
 .cards__card{
-    float: left;
+    /* float: left; */
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
     width: 200px;
     height: 260px;
     border: 1px solid var(--color-background);
@@ -267,7 +275,7 @@ body{
 }
 @keyframes mueveIcono {
     from {
-        transform: translateY(-250%);
+        transform: translateY(-150%);
     }
     to {
         transform: translateY(0%);
@@ -277,6 +285,20 @@ body{
 
 .cards__card:last-child{
     margin-right: 0px;
+}
+
+.cards__card:hover .card__icon  {
+    color: var(--color-secondary);
+}
+
+
+.cards__card:hover .card__category{
+    color: var(--color-secondary);
+}
+
+
+.cards__card:hover .card__description{
+    color: var(--color-secondary);
 }
 
 .cards__card .card__icon{
@@ -289,6 +311,9 @@ body{
     margin: 0px auto;
 }
 /*efecto hover en la carta modificamos card__icon */
+/* .cards__card .card__icon:hover {
+    color: var(--color-secondary);
+} */
 
 /* keyframes */
 
@@ -300,21 +325,23 @@ body{
     font-weight: bold;
     text-align: center;
     color: var(--color-text-title);
-    transition: all 500ms;
 }
 /*efecto hover en la carta - modificamos card_category */
 .card__category:hover{
-    width: 100%;
-    height: 50px;
-    font-family: "TrebuchetMS";
-    font-size: 21px;
-    font-weight: bold;
-    text-align: center;
-    color: var(--color-secondary);
     transition: all 500ms;
-    animation: moverCategoria;
+    animation: moverCategoria 10s linear;
 }
+/*
+@keyframes moverCategoria {
+    0% {
+        transform: translateX(-150%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}*/
 
+/*---------------------------------------------------------------------------------------*/
 
 .card__description{
     font-family: "TrebuchetMS";
@@ -322,8 +349,12 @@ body{
     color: var(--color-text-title);
     font-size: 14px;
     /* transición */
+    transition: all 500ms;
 }
 /* efecto de hover en la carta. tocamos card__description */
+/* .card__description:hover {
+    color: var(--color-secondary);
+} */
 
 
 .clearfix{
@@ -463,6 +494,7 @@ body{
 .lateral__login input[type="reset"]:hover,
 .lateral__login button:hover{
     /* le incluyo una sombra */
+    box-shadow: 2px 2px 5px var(--color-box-shadow2); /*2px de longitud de la sombra y 5px de blur*/
 }
 
 .lateral__login a{
@@ -474,6 +506,9 @@ body{
 }
 
 /* efecto en el .lateral__login a mediante hover */
+.lateral__login a:hover{
+    color: var(--color-primary);
+}
 
 
 .lateral__social{
@@ -508,9 +543,20 @@ body{
     transform: translateX(-80%); /*lo desplazo para que cuando se lance el hover se vea el movimiento de la traslación*/
     opacity: 0; /*lo oculto*/
     /* transición el cambio */
-
+    transition: all 300ms ease-in-out;
 }
+.social__overlay:hover {
+    opacity: 1;
+    color: var(--color-text-title);
+}
+
+
 /* efecto hover sobre el div de lateral__social */
+.lateral__social .social__icon:hover {
+    color: var(--color-primary);
+}
+
+
 
 
 /* Artículos */
@@ -562,7 +608,10 @@ body{
 }
 
 .article__datos{
-    float: right;
+    /* float: right; */
+    display: flex;
+    justify-content: right;
+    
     background-color: var(--color-box-shadow2);
     color: var(--color-text-white);
     height: 30px;
@@ -589,6 +638,7 @@ body{
     text-align: center;
     font-family: "BebasNeue";
     /* transición */
+    transition: all 1000ms ease-in-out;
 
 }
 .articles__blog a{
@@ -598,8 +648,15 @@ body{
     color: var(--color-text-title);
     text-decoration: none;
     /* transición */
+    transition: all 100ms ease-in-out;
 }
 /* efecto de hover sobre articles__blog */
+.articles__blog a:hover{
+    background-color: var(--color-background);
+    border-radius: 50px;
+    border: 2px solid var(--color-box-shadow2);
+    font-size: 45px;
+}
 
 
 /* FOOTER */
@@ -624,7 +681,7 @@ body{
     text-decoration: none;
     color: var(--color-primary);
     /* transición */
-
+    transition: all 300ms ease-in-out;
 }
 .footer__title{
     display: block;
@@ -650,11 +707,16 @@ body{
     border-bottom: 1px solid var(--color-background);
 }
 .footer__list li a{
-    display: block;
+    /* display: block; */
+    display: grid;
     height: 40px;
     /* transición */
+    transition: all 300ms ease-in-out;
 }
 /* efecto de hover sobre cada li */
+.footer__list li a:hover {
+    color: var(--color-secondary);
+}
 
 
 .content__footer iframe{
