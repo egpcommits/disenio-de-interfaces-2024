@@ -72,8 +72,16 @@ body{
     color: var(--color-text-white);
 }
 
+.header__wrap {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+
 .header__logo{
-    float: left;
+    /* float: left; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     width: 200px;
     height: 50px;
     background-color: var(--color-primary);
@@ -87,9 +95,12 @@ body{
     transition: all 500ms;
 }
 
+
+
 .header__logo h3{
     display: block;
-    float: right;
+    /* float: right; */
+    text-align: right;
     font-size: 40px;
     margin-right: 65px;
     /* transición */
@@ -121,7 +132,8 @@ body{
 
 .logo__gear{
     display: block;
-    float: left;
+    /* float: left; */
+    text-align: left;
     font-size: 30px;
     margin-top: 4px;
     margin-left: 26px;
@@ -158,7 +170,11 @@ body{
 
 
 .header__menu{
-    float: right;
+    /* float: right; */
+    display: grid;
+    grid-template-columns: 1fr;
+    /* 1fr de columna porqe dentro del hedaer menu solo hay un elemento (aunque sean 4 li depsues) */
+    text-align: right;    
     height: 70px;
     background: transparent;
 }
@@ -467,12 +483,18 @@ body{
     font-size: 20px;
 }
 
+.lateral__login-button {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-right: 5rem;
+}
+
 .lateral__login input[type="submit"],
 .lateral__login input[type="button"],
 .lateral__login input[type="reset"],
 .lateral__login button{
-    /* display: block; */
-    float: left;
+    display: block;
+    /* float: left; */
     text-align: center;
     width: 100px;
     height: 35px;
@@ -556,9 +578,6 @@ body{
     color: var(--color-primary);
 }
 
-
-
-
 /* Artículos */
 .content__articles{
     float: left; /* es necesario flotarlo puesto que he incluido el div clearfix*/
@@ -583,6 +602,7 @@ body{
 }
 
 .articles__article{
+    position: relative;
     width: 98%;
     height: auto;
     border: 1px solid var(--color-background);
@@ -608,10 +628,10 @@ body{
 }
 
 .article__datos{
-    /* float: right; */
-    display: flex;
-    justify-content: right;
-    
+    /* float:  ;   */
+    position: absolute;
+    right: 1.15%; /*para el toc, para que coincida con la caja*/
+    width: 35%;
     background-color: var(--color-box-shadow2);
     color: var(--color-text-white);
     height: 30px;
@@ -667,9 +687,15 @@ body{
     color: var(--color-text-white);
     overflow: hidden;
 }
+
+.footer__wrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
 .footer__wrap > div{
-    float: left;
-    width: 25%;
+    /* float: left; */
+    width: 90%;
     height: 370px;
     margin: 40px;
     text-align: center;
