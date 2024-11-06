@@ -200,17 +200,19 @@ body{
 
 /* Maquetando el Banner */
 .content__banner{
+    position: relative;
     width: 95.5%;
     height: 300px;
     border: 10px solid var(--color-text-white);
     box-shadow: 0px 0px 2px var(--color-gray);
-    background: url("../img/backbaner.png");
+    /* background: url("../img/backbaner.png"); */
+    background: url("../img/fondo.jpg");
     background-position: -200px -200px;
     margin: 20px auto;
     overflow: hidden;
     border-radius: 40px;
     /* animación */
-    animation: moverBanner 4s infinite linear;
+    animation: moverBanner 9s infinite linear;
 }
 
 /* keyframes */
@@ -223,7 +225,15 @@ body{
     }
 }
 
-/* .content__banner h1{
+.content__banner img {
+    position: absolute;
+    width: 30%;
+    right: 0;
+    top: 5px;
+    border: 3px solid white;
+}
+
+.content__banner h1{
     display: block;
     width: 850px;
     font-family: "BebasNeue";
@@ -232,9 +242,8 @@ body{
     letter-spacing: 2px;
     text-shadow: 2px 2px 1px var(--color-bg);
     margin: 10px auto;
-    animación 
     animation: moverLetrasBanner 10s linear;
-} */
+}
 
 /* keyframes */
 @keyframes moverLetrasBanner {
@@ -725,7 +734,7 @@ body{
 
 .team-aside-box {
     width: 85%;
-    height: 500px;
+    height: 750px;
     margin: 0px auto;
     margin-top: 20px;
     padding-top: 2px;
@@ -733,13 +742,25 @@ body{
     box-shadow: 0px 0px 1px rgba(0,0,0,0.3), 0px 3px 7px rgba(0,0,0,0.3), 0px 1px var(--color-text-white) inset, 0px -3px 2px rgba(0,0,0,0.3) inset;
 }
 
-.lateral__team .social__overlay {
+.social__nombre{
     font-weight: bold;
     font-size: 2rem;
 }
 
+.social__descripcion {
+    font-size: 1.15rem;
+}
+
 .member__div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     padding: 20px;
+    /* box-shadow: 1px 1px 5px var(--color-box-shadow); */
+}
+
+.member__div .social__overlay {
+    margin-right: 5px;
+    margin-top: 20px;
 }
 
 .lateral__team {
@@ -747,14 +768,24 @@ body{
     grid-template-rows: repeat(5, 1fr);
 }
 
-.img_container img {
-    width: 50%;
-    border-radius: 500px;
+.img_container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    padding-left: 15px ;
 }
 
-.member__div {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.img_container img {
+    /* margin: 25px; */
+    width: 70%;
+    border-radius: 150px;
+    border: 3px solid var(--color-text-title);
+    transition: all 200ms ease-in-out;
+}
+
+.img_container img:hover {
+    box-shadow: 2px 2px 5px var(--color-box-shadow2);
+    transform: scale(1.1);
 }
 
 
