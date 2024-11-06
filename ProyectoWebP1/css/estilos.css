@@ -1,3 +1,5 @@
+
+
 @font-face{
     font-family: "TrebuchetMS";
     src: url("../fonts/TrebuchetMS.ttf");
@@ -29,29 +31,59 @@
  definimos familia de fuente que voy a utilizar */
 :root{
     --mx-width: 1240px;
-    --color-primary: #37bcf9;
-    --color-secondary: #fff;
-    --color-background: #ccc;
+    /* --color-primary: #37bcf9; */
+    --color-primary: #7CCFAB;    
+    /* --color-secondary: #fff; */
+    --color-secondary: #FBF3F0;
+    
+    /* --color-background: #ccc; */
+    --color-background: #91F2C8;
     --color-bg: black;
     --color-text-white: white;
-    --color-text-title: #00538c;
+    /* --color-text-title: #00538c; */
+    --color-text-title: #63A689;
     --color-grey: gray;
-    --color-box-shadow: #ddd;
-    --color-box-shadow2: #393d3f;
+    /* --color-box-shadow: #ddd; */
+    --color-box-shadow: #487964;
+    /* --color-box-shadow2: #393d3f; */
+    --color-box-shadow2: #345748;
+    
     --color-focus: #555;
 }
 
 /* Estilos Generales */
-html{
+
+html {
     /* para un tema de accesibilidad y poder trabajar con rem */
     /* font-size: 10px; */
     /* Accesibilidad,... si el usuario nos cambia el tamaño de fuente */
     font-size: 62.5%;
     overflow-x: hidden;
+
+    /* Pattern */
+    --s: 6px; /* control the size*/
+    --c1: #f0f0f0;
+    --c2: #fdfdfdfb;
+    
+    --c:#0000 75%,var(--c1) 0;
+    --g1:conic-gradient(at 78% 3%,var(--c));
+    --g2:conic-gradient(at 3% 78%,var(--c));
+    background:
+      var(--g1),
+      var(--g1) var(--s) var(--s),
+      var(--g1) calc(2*var(--s)) calc(2*var(--s)),
+      var(--g1) calc(3*var(--s)) calc(3*var(--s)),
+      var(--g2) 0 calc(3*var(--s)),
+      var(--g2) var(--s) 0,
+      var(--g2) calc(2*var(--s)) var(--s),
+      var(--g2) calc(3*var(--s)) calc(2*var(--s))
+      var(--c2);
+    background-size: calc(4*var(--s)) calc(4*var(--s));
 }
-body{
+
+/*body{
     background: url("../img/pattern.png");
-}
+}*/
 /* wrap queremos que los elementos "hijos" dispongan de estos estilos */
 .header__wrap, .content__wrap, .footer__wrap{
     /* le asignamo 1200 para vista de escritorio */
@@ -206,13 +238,13 @@ body{
     border: 10px solid var(--color-text-white);
     box-shadow: 0px 0px 2px var(--color-gray);
     /* background: url("../img/backbaner.png"); */
-    background: url("../img/fondo.jpg");
-    background-position: -200px -200px;
+    /* background: url("../img/fondo3.jpg"); */
+    /* background-position: 0px 0px; */
     margin: 20px auto;
     overflow: hidden;
     border-radius: 40px;
     /* animación */
-    animation: moverBanner 9s infinite linear;
+    /* animation: moverBanner 9s infinite linear; */
 }
 
 /* keyframes */
@@ -221,7 +253,7 @@ body{
         background-position: 0px 0px; /* Para que no se vean los cortes de la imagen */
     }
     100% {
-        background-position: -200px -200px;
+        background-position: 20px 20px;
     }
 }
 
@@ -230,7 +262,12 @@ body{
     width: 30%;
     right: 0;
     top: 5px;
-    border: 3px solid white;
+}
+
+.banner__img img {
+    top: 0;
+    width: 100%;
+    z-index: -1;
 }
 
 .content__banner h1{
@@ -238,15 +275,16 @@ body{
     width: 850px;
     font-family: "BebasNeue";
     color: var(--color-text-white);
-    font-size: 45px;
+    font-size: 80px;
     letter-spacing: 2px;
     text-shadow: 2px 2px 1px var(--color-bg);
     margin: 10px auto;
     animation: moverLetrasBanner 10s linear;
+    text-align: center;
 }
 
 /* keyframes */
-@keyframes moverLetrasBanner {
+/*@keyframes moverLetrasBanner {
     0% {
         transform: translateX(-200%);
         font-size: 75px;
@@ -263,10 +301,9 @@ body{
     100% {
         transform: translateX(0%);
     }
-}
+}*/
 
 /* Tarjetas */
-/* Este hace falta no?*/
 .content__cards {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -284,17 +321,67 @@ body{
     margin: 22px;
     margin-top: 40px;
     cursor: pointer;
+    padding: 15px;
     /* transicion */
-    transition: all 500ms linear;
+    transition: all 500ms ease-in-out;
+}
+
+
+
+.card__category {
+    vertical-align: middle;
+}
+
+
+
+.card__category:hover {
+    transform: scale(1.1);
+}
+
+.card__category::before {
+    content: "";
+    height: 0.2rem;
+    width: 0;
+    background-color: var(--color-primary);
+    position: absolute;
+    bottom: 1.2rem;
+    opacity: 0;
+    transition: all 300ms linear;
+}
+
+
+/* Personalizado el subrayado para cada uno de los hijos */
+.cards__card:nth-child(1) .card__category:hover::before {
+    width: 87%;
+    opacity: 1;
+}
+
+.cards__card:nth-child(2) .card__category:hover::before {
+    width: 33%;
+    opacity: 1;
+}
+
+.cards__card:nth-child(3) .card__category:hover::before {
+    width: 54%;
+    opacity: 1;
+}
+
+.cards__card:nth-child(4) .card__category:hover::before {
+    width: 84%;
+    opacity: 1;
+}
+
+.cards__card:nth-child(5) .card__category:hover::before {
+    width: 45%;
+    opacity: 1;
 }
 
 /*efecto hover en las cartas */
 .cards__card:hover {
-    background-color: var(--color-bg);
-    color: white;
+    background-color: var(--color-secondary);
 }
 
-.cards__card:hover .card__icon {
+/*.cards__card:hover .card__icon {
     font-size: 60px;
     color: var(--color-primary);
     animation: mueveIcono 500ms linear;
@@ -306,6 +393,11 @@ body{
     to {
         transform: translateY(0%);
     }
+}*/
+
+.cards__card img {
+    width: 50px;
+    margin: auto;
 }
 
 .lateral__article {
@@ -325,18 +417,13 @@ body{
     margin-right: 0px;
 }
 
-.cards__card:hover .card__icon  {
-    color: var(--color-secondary);
-}
-
-
 .cards__card:hover .card__category{
-    color: var(--color-secondary);
+    color: var(--color-box-shadow2);
 }
 
 
 .cards__card:hover .card__description{
-    color: var(--color-secondary);
+    color: var(--color-focus);
 }
 
 .cards__card .card__icon{
@@ -614,6 +701,8 @@ body{
     width: 860px;
 } */
 
+
+
 .content__articles h2{
     display: block;
     width: 100%;
@@ -637,7 +726,7 @@ body{
     height: auto;
     border: 1px solid var(--color-background);
     margin: 40px auto;
-    padding: 10px;
+    /* padding: 10px; */
     font-family: "TrebuchetMS";
     background: var(--color-text-white);
     color: var(--color-bg);
@@ -660,8 +749,10 @@ body{
 .article__datos{
     /* float:  ;   */
     position: absolute;
-    right: 1.15%; /*para el toc, para que coincida con la caja*/
-    width: 35%;
+    right: 1.1%; /*para que coincida con la caja que sino me da toc*/
+    bottom: 9px;
+    width: 100%;
+    height: 200px;
     background-color: var(--color-box-shadow2);
     color: var(--color-text-white);
     height: 30px;
@@ -669,7 +760,8 @@ body{
     margin: -10px;
     padding: 4px;
     font-size: 13px;
-    border-radius: 0px 0px 0px 5px; /* esquina inferior izq 5px */
+    border-radius: 0px 0px 0px 0px;
+    z-index: 3;
 }
 .article__datos span{
     margin: 6px;
@@ -679,6 +771,78 @@ body{
     margin-top: 10px;
     margin-bottom: 10px;
     font-size: 15px;
+}
+
+.article__content {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.article__content p {
+    font-size: 15px;
+    text-align: justify;
+    margin: 10px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    padding-left: 30px;
+    padding-right: 30px;
+    vertical-align: middle;
+}
+
+.img__articulo1 {
+    /* /* position: absolute; */
+    right: 0;
+    top: 0px; 
+    /* width: 40%;
+    height: 70%; */
+    width: 110%;
+    height: 90%;
+    /* margin-right: 50px; */
+}
+
+.img__articulo2 {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 40%;
+    height: 102%;
+}
+
+.img__articulo3 {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 40%;
+    height: 100%;
+}
+
+.img__articulo4 {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 45%;
+    height: 90%;
+}
+
+.img__articulo5 {
+    position: absolute;
+    right: 0;
+    top: 0px;
+    width: 50%;
+    height: 93%;
+}
+
+.articles__article:nth-child(2) {
+    height: 350px;
+}
+
+.articles__article:nth-child(3) {
+    height: 400px;
+}
+
+.articles__article:nth-child(4) {
+    height: 350px;
 }
 
 .articles__blog{
