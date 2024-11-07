@@ -47,7 +47,6 @@
     --color-box-shadow: #487964;
     /* --color-box-shadow2: #393d3f; */
     --color-box-shadow2: #345748;
-    
     --color-focus: #555;
 }
 
@@ -65,7 +64,7 @@ html {
     --c1: #f0f0f0;
     --c2: #fdfdfdfb;
     
-    --c:#0000 75%,var(--c1) 0;
+    --c:#00000000 75%,var(--c1) 0;
     --g1:conic-gradient(at 78% 3%,var(--c));
     --g2:conic-gradient(at 3% 78%,var(--c));
     background:
@@ -246,7 +245,7 @@ html {
     overflow: hidden;
     border-radius: 40px;
     /* animación */
-    animation: moverBanner 30s infinite linear;
+    animation: moverBanner 25s infinite linear;
 }
 
 /* keyframes */
@@ -256,20 +255,28 @@ html {
         background-position: 0px; /* Para que no se vean los cortes de la imagen */
     }
 
+    15% {
+        background-position: -100px;
+    }
+
     35% {
-        background-position: -200px ;
+        background-position: -200px;
     }
 
     50% {
-        background-position: -400px ;
+        background-position: -400px;
     }
 
     65% {
-        background-position: -200px ;
+        background-position: -200px;
+    }
+
+    85% {
+        background-position: -100px;
     }
 
     100% {
-        background-position: 0px ;
+        background-position: 0px;
     }
 }
 
@@ -324,7 +331,7 @@ html {
 /* Tarjetas */
 .content__cards {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr);
 }
 
 .cards__card{
@@ -709,7 +716,54 @@ html {
 
 .lateral__collaborators {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
+    height: 340px;
+    padding: 20px;
+}
+
+.collaborators__logo img {
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin:5px;
+    margin-left: 75px;
+    /* animation: moverLogo 500ms linear; */
+}
+
+.collaborators__logo div {
+    font-size: 1.4rem;
+    margin: 5px 5px 5px 5px;
+    text-align: center;
+}
+
+.logo__crunchyroll:hover {
+    animation: moverLogo 300ms linear;
+}
+
+@keyframes moverLogo {
+    0% {
+        transform: translateX(-150%);
+    }
+    100% {
+        transform: translateX(0%);
+
+    }
+}
+
+.logo__crunchyroll:hover {
+    transform: translateY(-200%);
+}
+
+.collaborator__crunchyroll:hover a {
+    color: var(--color-secondary);
+    background-color: #FF8635;
+    border-radius: 10px;
+}
+
+.collaborator__myanimelist:hover a {
+    color: var(--color-secondary);
+    background-color: #2E51A2;
+    border-radius: 10px;
 }
 
 
@@ -757,13 +811,25 @@ html {
 }
 
 .articles__article h4{
+    position: absolute;
     display: block;
     font-size: 23px;
     margin: 3px;
+    background-color: var(--color-box-shadow2);
+    width: 100%;
+    height: 55px;
+    z-index: 2;
+    top: -3px;
+    left: -2.4px;
 }
 .articles__article h4 a{
     text-decoration: none;
-    color: var(--color-text-title);
+    color: var(--color-secondary);
+    text-shadow: 1px 1px 5px var(--color-background);
+    font-size: 2.5rem;
+    text-align: center;
+    margin-top: 1.2px;
+    padding: 10px;
 }
 .articles__article h4 a:hover{
     text-decoration: underline;
@@ -772,10 +838,9 @@ html {
 .article__datos{
     /* float:  ;   */
     position: absolute;
-    right: 1.1%; /*para que coincida con la caja que sino me da toc*/
+    right: 1.09%; /*para que coincida con la caja que sino me da toc*/
     bottom: 9px;
     width: 100%;
-    height: 200px;
     background-color: var(--color-box-shadow2);
     color: var(--color-text-white);
     height: 30px;
@@ -784,7 +849,7 @@ html {
     padding: 4px;
     font-size: 13px;
     border-radius: 0px 0px 0px 0px;
-    z-index: 3;
+    z-index: 2;
 }
 .article__datos span{
     margin: 6px;
@@ -802,6 +867,8 @@ html {
     grid-template-columns: 1fr 1fr;
 }
 
+
+
 .article__content p {
     font-size: 15px;
     text-align: justify;
@@ -814,46 +881,46 @@ html {
 }
 
 .img__articulo1 {
-    /* /* position: absolute; */
-    right: 0;
-    top: 0px; 
+    position: absolute;
+    right: 0px;
+    top: 55px; 
     /* width: 40%;
     height: 70%; */
-    width: 110%;
+    width: 45%;
     height: 90%;
     /* margin-right: 50px; */
 }
 
 .img__articulo2 {
     position: absolute;
-    right: 0;
-    top: 0px;
-    width: 40%;
-    height: 102%;
+    right: -1px;
+    bottom: -80px; 
+    width: 35%;
+    height: 110%;
 }
 
 .img__articulo3 {
     position: absolute;
-    right: 0;
-    top: 0px;
-    width: 40%;
-    height: 100%;
+    right: -1px;
+    bottom: -40px; 
+    width: 35%;
+    height: 95%;
 }
 
 .img__articulo4 {
     position: absolute;
-    right: 0;
-    top: 0px;
+    right: -1px;
+    bottom: -30px;
     width: 45%;
     height: 90%;
 }
 
 .img__articulo5 {
     position: absolute;
-    right: 0;
-    top: 0px;
-    width: 50%;
-    height: 93%;
+    right: -1px;
+    bottom: 15px;
+    width: 45%;
+    height: 80%;
 }
 
 .articles__article:nth-child(2) {
@@ -867,6 +934,12 @@ html {
 .articles__article:nth-child(4) {
     height: 350px;
 }
+
+.articles__article:nth-child(5) {
+    height: 300px;
+}
+
+
 
 .articles__blog{
     height: 100px;
