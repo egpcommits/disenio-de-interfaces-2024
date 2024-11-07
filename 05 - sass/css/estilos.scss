@@ -1,0 +1,40 @@
+//Variables
+$color-fondo: #ccc;
+$color-fondo2: lightblue;
+$color-letra: rgb(114, 165, 223);
+$color-letra2: blue;
+
+//Variables asociadas a un selector
+$b: 'body'; //Ataca al body
+
+#{$b} { //selector
+    background-color: $color-fondo;
+}
+
+h1 {
+    color: $color-letra2;
+}
+
+//Anidación
+.caja {
+    border: 1px solid black;
+    margin: 0 auto;
+    text-align: center;
+    background-color: $color-fondo2;
+    padding: 10px;
+
+    h2 {
+        color: $color-letra;
+    }
+
+    .info {
+        border: 1px solid black;
+        background-color: $color-fondo;
+
+        h3 {
+            color: green;
+        }
+    }
+}
+
+//Mixins - Funciones
