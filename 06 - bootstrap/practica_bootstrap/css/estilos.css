@@ -1,0 +1,8 @@
+body {
+    font-family: outfit;
+}
+
+#contacto {
+    background-image: url(../img/contacto.jpg);
+    background-size: cover;
+}
