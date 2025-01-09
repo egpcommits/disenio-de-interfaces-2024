@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hola mundo</title>
+</head>
+<body>
+    <p id="texto">HOLA MUNDO</p>
+    <input type="button" value="rojo" id="rojo">
+    <input type="button" value="azul" id="azul">
+    <input type="button" value="grande" id="grande">
+    <input type="button" value="pequeño" id="pequeno">
+    <script src="../jquery-3.7.1.min.js" type="text/javascript"></script>
+
+    <script>
+        $("#rojo").click(function() {
+           $("#texto").css("color", "red");
+           //.css -> funcion de jquery
+        });
+
+        $("#azul").click(function() {
+           $("#texto").css("color", "blue");
+        });
+
+        $("#grande").click(function() {
+           $("#texto").css("font-size", "20px");
+        });
+
+        $("#pequeno").click(function() {
+           $("#texto").css("font-size", "10px");
+        });
+    </script>
+</body>
+</html>

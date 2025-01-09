@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Métodos</title>
+</head>
+<body>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <!--
+        append - añade al principio
+        prepend - añade al final
+        detach() - tambien elimina un objeto, pero se guarda la informacion asociada al elemento
+        remove() - elimina un objeto
+        css() - cambiar el aspecto
+        .eq() - se introduce un index
+    -->
+
+    <ul id="lista">
+        
+    </ul>
+    <script>
+        let i = 0;
+        while (i < 10) {
+            $("#lista").append(`<li id="id${i}">item ${[i]}</li>`);
+            i++;
+        }
+        $("ul li:first").remove();
+        $("#id1").css("color", "lightblue");
+        $("#id2").css("color", "yellowgreen");
+        $("#id3").css("color", "pink");
+        $("#id4").css("color", "slateblue");
+        $("#id5").css("color", "darkorange");
+        $("#id6").css("color", "mediumspringgreen");
+        $("#id7").css("color", "white");
+        $("#id8").css("color", "tomato");
+        $("#id9").css("color", "steelblue");
+
+        $("li").eq(6).css("background-color", "dimgrey"); //de todos los li que hay, accede al 6
+    </script>
+</body>
+</html>
