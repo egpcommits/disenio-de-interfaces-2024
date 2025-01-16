@@ -1,0 +1,45 @@
+1. Ejercicios con jQuery UI: Efectos y Animaciones
+Ejercicios:
+1-Haz que un <div> con clase .cuadro se desvanezca (fade) cuando se haga clic en un botón con id #fadeButton.
+2-Crea un efecto de deslizamiento (slideUp) para un <p> cuando el usuario haga clic en un botón.
+3-Haz que un elemento con clase .oculto se muestre con una animación (fadeIn) cuando se haga clic en un botón.
+4-Aplica un efecto de desvanecimiento al pasar el ratón sobre una imagen.
+5-Haz que un <div> con clase .animado se deslice hacia abajo (slideDown) al hacer clic en un botón con id #slideButton.
+6-Haz que el color de fondo de un <div> cambie de manera animada cuando se pase el ratón sobre él.
+7-Usa un efecto de desvanecimiento para mostrar y ocultar un <div> al hacer clic en un botón.
+8-Haz que un texto se deslice de izquierda a derecha usando show() y hide().
+9-Usa el método toggle() para alternar la visibilidad de un elemento al hacer clic.
+10-Haz que un <div> se desplace suavemente a una posición específica en la página.
+
+
+2. Ejercicios con jQuery UI: Widgets
+
+Ejercicios:
+11-Crea un diálogo con un mensaje de bienvenida usando el widget dialog de jQuery UI.
+12-Haz que un <input> se transforme en un campo de fecha utilizando el widget datepicker.
+13-Aplica un tooltip a un elemento con el texto "Haz clic aquí".
+14-Convierte un menú de lista <ul> en un menú desplegable utilizando menu.
+15-Convierte una lista de elementos en una lista interactiva de ordenación utilizando el widget sortable.
+16-Convierte un <input> en un campo numérico con el widget spinner.
+17-Usa el widget progressbar para mostrar el progreso de una acción (por ejemplo, una carga de archivo).
+18-Usa el widget autocomplete para sugerir opciones mientras el usuario escribe en un campo de texto.
+19-Crea un cuadro de selección múltiple usando selectmenu.
+20- Aplica un accordion a una lista de elementos <h3> y <div>.
+
+
+
+
+3. Ejercicios con jQuery UI: Interacciones
+
+Ejercicios:
+21-Crea un efecto de arrastrar y soltar (draggable y droppable) entre dos elementos.
+22-Haz que un <div> sea redimensionable utilizando el widget resizable.
+23-Haz que un elemento sea resizable solo horizontalmente.
+24-Haz que un <div> sea resizable solo verticalmente.
+25-Usa el widget selectable para permitir seleccionar varios elementos de una lista.
+26-Haz que un elemento sea arrastrable y también resizable al mismo tiempo.
+27-Convierte un elemento en un área de arrastre con el widget draggable.
+28-Convierte un contenedor en un área de soltado con el widget droppable.
+29-Usa el widget draggable y droppable para crear un juego de tipo "arrastra y coloca".
+30-Haz que un elemento se desplace hacia una posición específica cuando se hace clic, usando el widget draggable.
+

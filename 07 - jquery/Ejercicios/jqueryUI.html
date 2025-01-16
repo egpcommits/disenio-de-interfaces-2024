@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+    <style>
+        .cuadro{
+            background-color: palegoldenrod;
+            width: 200px;
+            height: 200px;
+        }
+
+        img {
+            width: 200px;
+            display: block;
+        }
+
+        #cuadro2 {
+            background-color: palegreen;
+            width: 200px;
+            height: 200px;
+        }
+
+        #desvanecer {
+            background-color: paleturquoise;
+            width: 200px;
+            height: 200px;
+        }
+
+        #textoSchrodinger {
+            position: absolute;
+        }
+
+        #divImagen {
+            background-color: beige;
+            width: 300px;
+            height: 204px;
+        }
+
+        #divImagen > img {
+            margin: auto;
+        }
+
+        #divSuave {
+            background-color: aliceblue;
+            width: 200px;
+            height: 200px;
+            /* position: absolute; */
+        }
+
+    </style>
+</head>
+<body>
+    <script src="../jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <div class="cuadro"></div>
+    <input type="submit" value="Fade out" id="fadeOutButton">
+    <input type="submit" value="Fade in" id="fadeInButton">
+
+
+    <br><br>
+
+
+    <p id="parrafoDeslizar">En principio, este párrafo se va a deslizar cuando se pulse el boton de abajo.</p>
+    <input type="submit" id="botonDeslizarArriba" value="Deslizar arriba">
+    <input type="submit" id="botonDeslizarAbajo" value="Deslizar abajo">
+
+
+    <br><br>
+
+
+    <img src="imagenes/al.jpg" alt="alphonse" id="al">
+
+
+    <br><br>
+
+
+    <div id="cuadro2"></div>
+
+
+    <br><br>
+
+
+    <div id="desvanecer"></div>
+    <input type="submit" id="botonDesvanecer" value="Ocultar/Mostrar">
+
+
+    <br><br>
+
+
+    <p id="textoSchrodinger">Este texto va a desaparecer o aparecer deslizandose.</p>
+    <input type="submit" id="botonOcultarTexto" value="Ocultar">
+    <input type="submit" id="botonMostrarTexto" value="Mostrar">
+
+
+    <br><br>
+
+
+    <div id="divImagen">
+        <img src="imagenes/roy.jpg" alt="roy" id="roy">
+    </div>
+
+
+    <br><br>
+
+
+    <div id="divSuave"></div>
+
+
+
+    <br><br>
+
+
+    <div id="dialogo" title="Diálogo">
+        <p>Esto es el diálogo del ejercicio 11</p>
+    </div>
+
+
+    <br><br>
+
+    <p>Fecha</p>
+    <input type="text" id="fecha" placeholder="fecha">
+    
+
+    <script>    
+    /*
+    fade, fadeIn, fadeOut, fadeToggle, slipDown, slipIP (se refiere a slide?), animate, .css, hover, mouseEnter, mouseLeave
+    
+    */    
+        window.onload = () => {
+            //FADEIN Y FADEOUT
+            $("#fadeOutButton").click(function () {
+                $("div").fadeOut();
+            });
+
+            $('#fadeInButton').click(function () {
+                $("div").fadeIn();
+            });
+            
+
+
+            //SLIDE UP
+            $("#botonDeslizarArriba").click(function () {
+                $("#parrafoDeslizar").slideUp();
+            });
+
+            $("#botonDeslizarAbajo").click(function () {
+                $("#parrafoDeslizar").slideDown();
+            });
+
+
+
+            //DESLIZANDO IMAGEN
+            $("#al").hover(function () {
+                $("#al").fadeOut();
+            });
+
+
+
+            //CAMBIANDO FONDO DE UN DIV DE FORMA ANIMADA
+            $("#cuadro2").hover(function () {
+                $("#cuadro2").css("width", "350px");
+            }, function () {
+                $("#cuadro2").css("width", "200px");
+            });
+
+
+
+            //DESVANECIMIENTO CON TOGGLE
+            $("#botonDesvanecer").on("click", function () {
+                $("#desvanecer").fadeToggle("slow");
+                //Con el fadetoggle se puede usar un boton normal, y va a aparecer u ocultarse dependiendo del estado en el que se encuentre.
+                //se le pueden añadir distintos parametros, como palabras reservadas ("slow") o valores para poner milisegundos (3000)
+            });
+
+
+
+            //DESLIZAR CON SHOW Y HIDE
+            $("#botonMostrarTexto").on("click", function () {
+                $("#textoSchrodinger").animate({left:"8px"}, 1000);
+            });
+
+            $("#botonOcultarTexto").on("click", function () {
+                $("#textoSchrodinger").animate({left:"-350px"}, 1000);
+            });
+
+
+
+            //USAR METODO TOGGLE PARA LA VISIBILIDAD DE UN ELEMENTO
+            $("#divImagen").on("click", function () {
+                $("#roy").toggle("slow", "linear");
+
+                /*
+                "swing" - moves slower at the beginning/end, but faster in the middle (por defecto)
+                "linear" - moves in a constant speed
+                */
+            });
+
+
+
+            //DESPLAZAR UN DIV SUAVEMENTE
+            $("#divSuave").on("click", function () {
+                $("#divSuave").animate({left:"500px"}, 2000);
+                //para que funcione, descomentar el position absolute
+            });
+
+
+
+            ////////////////////////////////////////////////////////////////////////////////////////
+
+            //11-Crea un diálogo con un mensaje de bienvenida usando el widget dialog de jQuery UI.
+            $(function () {
+                $("#dialogo").dialog();
+            });
+
+
+
+            //12-Haz que un <input> se transforme en un campo de fecha utilizando el widget datepicker.
+            $(function () {
+                $("#fecha").datepicker();
+            })
+
+        }
+    </script>
+</body>
+</html>
