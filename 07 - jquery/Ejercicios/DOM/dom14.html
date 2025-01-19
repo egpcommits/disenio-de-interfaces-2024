@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 14</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+    <style>
+        div {
+            background-color: aliceblue;
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <div>Primer div</div>
+    <div>Segundo div</div>
+    <div>Tercer div</div>
+    <div>Cuarto div</div>
+
+    <input type="submit" value="Cambiar fondo">
+
+
+    <script>
+        // 14-Selecciona el segundo <div> en el documento y cámbiale el fondo a amarillo.
+
+        $("input").on("click", function () {
+            $(":nth-child(2)").css("background-color", "red");
+        });
+    </script>
+</body>
+</html>

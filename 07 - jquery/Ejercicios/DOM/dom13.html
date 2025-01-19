@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 13</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+    <style>
+        div {
+            background-color: aliceblue;
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <input type="text">
+    <input type="text">
+    <input type="text">
+
+    <input type="submit" value="Poner borde" id="boton">
+
+
+    <script>
+        // 13-Accede a todos los elementos de tipo <input> y establece su valor como "Texto predeterminado".
+
+        /*
+        val() se usa para leer/definir el valor de un campo (input, select, textarea). Como lo que se está cambiando sería el atributo value del elemento, no funcionará en otros elementos como div que no tienen atributo value.
+
+        text() se usa para leer/definir el texto contenido en un elemento (sea el que sea) y sus descendientes. Es decir, devolverá el texto sin etiquetas HTML. Y si se usa para asignar un valor, las etiquetas se mostrarán como texto (p.e. < se convertirá en &lt;).
+
+        html() se usa para leer/definir el código HTML contenido en un elemento (sea el que sea) y sus descendientes. Con esto no sólo se devolverá el texto sino también las etiquetas HTML.
+        */
+
+        $("#boton").on("click", function () {
+            $("input").val("Texto predeterminado");
+        });
+    </script>
+</body>
+</html>

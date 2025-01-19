@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 6</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <ul id="lista">
+        <li>Primer elemento</li>
+        <li>Segundo elemento</li>
+        <li>Tercer elemento</li>
+        <li>Cuarto elemento</li>
+    </ul>
+    <input type="submit" value="Añadir elemento">
+
+
+    <script>
+        // 6-Añade un nuevo elemento <li> al final de una lista con id #lista.
+
+        $("input").on("click", function () {
+            let texto1 = "<li>Un</li>"; //Crear nuevo elemento con HTML
+            let texto2 = $("<li></li>").text("nuevo"); // Crear nuevo elemento con jQuery
+            let texto3 = document.createElement("li"); //Crear nuevo elemento con DOM
+            texto3.append("elemento");
+
+            $("#lista").append(texto1, texto2, texto3);
+
+            let texto4 = "<p>Esto va antes de la lista</p>";
+            $("#lista").before(texto4);
+
+            let texto5 = "<p>Esto va despues de la lista</p>";
+            $("#lista").after(texto5);
+        });
+    </script>
+</body>
+</html>

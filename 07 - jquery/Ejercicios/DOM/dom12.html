@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 12</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+    <style>
+        div {
+            background-color: aliceblue;
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <h1>Este h1 no va a tener borde rojo</h1>
+    <div id="contenedor">
+        <h1>Este h1 va a tener un borde rojo</h1>
+    </div>
+
+    <input type="submit" value="Poner borde">
+
+
+    <script>
+        // 12-Añade un borde rojo a todos los elementos <h1> dentro de un <div>.
+
+        $("input").on("click", function () {
+            $("#contenedor > h1").css("border", "2px solid red");
+        });
+    </script>
+</body>
+</html>

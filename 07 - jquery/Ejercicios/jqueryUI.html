@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicio 1</title>
+    <title>jQueryUI</title>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
     <style>
         .cuadro{
@@ -48,6 +48,34 @@
             width: 200px;
             height: 200px;
             /* position: absolute; */
+        }
+
+        .ui-menu { 
+            /* modifica el ancho del menu */
+            width: 150px;
+        }
+
+        #sortable { 
+            list-style-type: none; 
+            margin: 0; 
+            padding: 0; 
+            width: 10%; 
+        }
+        #sortable li { 
+            margin: 0 3px 3px 3px; 
+            padding: 0.4em; 
+            padding-left: 1.5em; 
+            font-size: 1.4em; 
+            height: 18px; 
+        }
+
+        #sortable li span { 
+            position: absolute; 
+            margin-left: -1.3em; 
+        }
+
+        #progressbar {
+            width: 20%;
         }
 
     </style>
@@ -122,6 +150,91 @@
 
     <p>Fecha</p>
     <input type="text" id="fecha" placeholder="fecha">
+
+
+    <br><br><br><br>
+
+
+    <!-- Para que se vea el tooltip, hayque poner un Title -->
+     <p>Tooltip</p>
+    <a href="#" title="Ole" id="enlaceTooltip">Pasa el ratón por encima</a>
+
+
+    <br><br><br><br>
+
+
+    <p>Menú</p>
+    <ul id="menu">
+        <li><div>Toys (n/a)</div></li>
+        <li><div>Books</div></li>
+        <li><div>Clothing</div></li>
+        <li><div>Electronics</div>
+          <ul>
+            <li><div>Home Entertainment</div></li>
+            <li><div>Car Hifi</div></li>
+            <li><div>Utilities</div></li>
+          </ul>
+        </li>
+        <li><div>Movies</div></li>
+        <li><div>Music</div>
+          <ul>
+            <li><div>Rock</div>
+              <ul>
+                <li><div>Alternative</div></li>
+                <li><div>Classic</div></li>
+              </ul>
+            </li>
+            <li><div>Jazz</div>
+              <ul>
+                <li><div>Freejazz</div></li>
+                <li><div>Big Band</div></li>
+                <li><div>Modern</div></li>
+              </ul>
+            </li>
+            <li><div>Pop</div></li>
+          </ul>
+        </li>
+        <li><div>Specials (n/a)</div></li>
+      </ul>
+
+
+      <br><br><br><br>
+
+
+      <p>Lista ordenable</p>
+      <ul id="sortable">
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 8</li>
+        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 9</li>
+      </ul>
+
+
+      <br><br><br><br>
+
+
+      <p>Spinner</p>
+      <input id="spinner">
+
+
+      <br><br><br><br>
+
+
+      <p>Barra de progreso</p>
+      <div id="progressbar"></div>
+      <input type="submit" value="Llenar" id="botonProgressbar">
+
+
+      <br><br><br><br>
+
+
+      <p>Autocomplete</p>
+      <input id="autocomplete" type="text">
     
 
     <script>    
@@ -220,7 +333,58 @@
             //12-Haz que un <input> se transforme en un campo de fecha utilizando el widget datepicker.
             $(function () {
                 $("#fecha").datepicker();
-            })
+            });
+
+
+
+            //13-Aplica un tooltip a un elemento con el texto "Haz clic aquí".
+            $(function () {
+                $("#enlaceTooltip").tooltip();
+            });
+
+
+
+            //14-Convierte un menú de lista <ul> en un menú desplegable utilizando menu.
+            $(function () {
+                $("#menu").menu();
+            });
+
+
+
+            //15-Convierte una lista de elementos en una lista interactiva de ordenación utilizando el widget sortable.
+            $(function () {
+                $("#sortable").sortable();
+            });
+
+
+
+            //16-Convierte un <input> en un campo numérico con el widget spinner.
+            $("#spinner").on("click", function () {
+                $("#spinner").spinner();
+            });
+
+
+
+            //17-Usa el widget progressbar para mostrar el progreso de una acción (por ejemplo, una carga de archivo).
+            $("#progressbar").progressbar({
+                value: 21
+            });
+
+
+
+            //18-Usa el widget autocomplete para sugerir opciones mientras el usuario escribe en un campo de texto.
+            $( function() {
+                var array = ["Nayeon", "Jeongyeon", "Momo", "Sana", "Jihyo", "Mina", "Dahyun", "Chaeyoung", "Tzuyu"];
+                $( "#autocomplete" ).autocomplete({
+                    source: array
+                });
+            } );
+
+
+
+            //19-Crea un cuadro de selección múltiple usando selectmenu.
+            
+            
 
         }
     </script>

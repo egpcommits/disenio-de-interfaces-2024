@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 2</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+    <style>
+        .parrafo {
+            background-color: aquamarine;
+            width: 15%;
+        }
+    </style>
+</head>
+<body>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <p class="parrafo">El fondo de este texto va a cambiar de color cuando se haga click en él.</p>
+
+
+    <script>        
+        // 2-Selecciona el primer elemento con la clase .producto y cambia su color de fondo a azul.
+
+        $("p").on("click", function () {
+            $("p").css({"background-color" : "#87bdd8", "color" : "white"});
+            // Si no se pasan parametros, devuelve el valor de la propiedad (por lo que hay que recogerlo)
+            // Se pueden cambiar varias propiedades a la vez
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 9</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+    <style>
+        div {
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <div class="eliminar">Va a desaparecer</div>
+    <div>Se queda</div>
+    <div class="eliminar">Va a desaparecer</div>
+    <div class="eliminar">Va a desaparecer</div>
+    <div>Se queda</div>
+    <div class="eliminar">Va a desaparecer</div>
+
+    <ul>
+        <li>Todos los</li>
+        <li>elementos de la lista</li>
+        <li>van a desaparecer.</li>
+    </ul>
+    <input type="submit" value="Eliminar elementos">
+
+
+    <script>
+        // 9-Elimina todos los elementos con la clase .eliminar.
+
+        $("input").on("click", function () {
+            $(".eliminar").remove();
+            $("ul").empty();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 10</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <div id="contenedor">
+        <img src="imagenes/hughes.jpg" class="foto">
+        <img src="imagenes/roy.jpg">
+        <img src="imagenes/hohenheim.jpg" class="foto">
+        <img src="imagenes/greed.jpg" class="foto">
+        <img src="imagenes/riza.jpg">
+    </div>
+
+    <input type="submit" value="Ocultar fotos">
+
+
+    <script>
+        // 11-Selecciona todos los elementos con la clase .foto y ocúltalos.
+
+        $("input").on("click", function () {
+            $(".foto").hide();
+        });
+    </script>
+</body>
+</html>

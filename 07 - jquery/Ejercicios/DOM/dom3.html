@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 3</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <input type="submit" value="Añadir texto">
+    <div></div>
+
+
+    <script>
+        // 3-Accede al primer <div> de la página y agrega el texto "Hola Mundo".
+
+        $("input").on("click", function () {
+            $("div").text("Se ha añadido texto");
+        });
+    </script>
+</body>
+</html>

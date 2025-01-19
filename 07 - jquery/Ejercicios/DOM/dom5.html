@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 5</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+</head>
+<body>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <p>You're feeling things now, and you're confused</p>
+    <p>Watching my body getting loose</p>
+    <p>You don't know what you're gonna do</p>
+    <p>You're mine</p>
+    <input type="submit" value="Texto grande">
+
+
+    <script>
+        // 5-Accede a todos los elementos <p> en la página y cambia su tamaño de fuente a 18px.
+
+        $("input").on("click", function () {
+            $("p").css("font-size", "18px");
+        });
+    </script>
+</body>
+</html>

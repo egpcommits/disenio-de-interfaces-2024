@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 10</title>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.3/themes/smoothness/jquery-ui.css">
+    <style>
+        div {
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+
+    <div id="contenedor">
+        <span id="cambiar">We're the originators</span>
+        <span>global entertainers</span>
+        <span>Your favorite girl groups sing our song screamin'</span>
+        <span id="cambiar">"TWICE"</span>
+    </div>
+
+    <input type="submit" value="Cambiar fondo">
+
+
+    <script>
+        // 10-Selecciona todos los <span> dentro de un <div> con id #contenedor y cambia su color de fondo a gris.
+
+        $("input").on("click", function () {
+            $("#contenedor > span#cambiar").css("background-color", "pink");
+        });
+    </script>
+</body>
+</html>
