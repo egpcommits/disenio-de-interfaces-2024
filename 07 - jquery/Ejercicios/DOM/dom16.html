@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 16</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h2>sldfakld</h2>
+    <h2>sldfakld</h2>
+    <h2>sldfakld</h2>
+    <script>
+        $(document).ready (() => {
+        // 16-Inserta un nuevo párrafo al principio del <body> con el texto "Bienvenido".
+            let texto = $("<h1></h1>").text("Bienvenido a mi página");
+            $("body").before(texto);
+        });        
+    </script>
+</body>
+</html>

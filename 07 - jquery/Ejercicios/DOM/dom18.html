@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 18</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p class="producto">Tiene data-id</p>
+    <input type="submit" value="Añadir data-id">
+    <script>
+        $(document).ready (() => {
+        // 18-Establece un atributo data-id en todos los elementos con la clase .producto.
+            $("input").on("click", function () {
+                $(".producto").attr("data-id", "10"); //Añade o cambia atributos
+            });
+        });        
+    </script>
+</body>
+</html>

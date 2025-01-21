@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 17</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <style>
+        img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <img src="imagenes/hohenheim.jpg"><br>
+    <input type="submit" value="Cambiar foto">
+    <script>
+        $(document).ready (() => {
+        // 17-Cambiar el src de una imagen con id #imagen a una nueva URL.
+            $("input").on("click", function () {
+                $("img").prop("src", "imagenes/riza.jpg"); //The prop() method sets or returns properties and values of the selected elements
+                //To remove a property use the removeProp() method.
+            });
+        });        
+    </script>
+</body>
+</html>
