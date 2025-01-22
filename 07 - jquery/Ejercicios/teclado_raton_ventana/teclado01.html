@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado 01</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        // 1-Detecta cuando se presiona la tecla "Enter" en un <input> y muestra un mensaje en la consola.
+        $(document).ready(function () {
+            $(document).on("keydown", function (ev) {
+                if (ev.key == "Enter") console.log("Se está pulsando el enter.");
+            });
+        });
+    </script>
+</body>
+</html>

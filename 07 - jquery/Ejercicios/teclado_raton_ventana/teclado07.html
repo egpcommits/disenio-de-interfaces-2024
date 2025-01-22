@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado 07</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <input type="text" id="email">
+    <script>
+        // 7-Detecta cuando se escribe en un campo con id #email y verifica si tiene un "@" y muestra un mensaje.
+        $(document).ready(function() {
+            $("#email").on("focusout", function () {
+                let texto = $("#email").val();
+                console.log(texto)
+                if (texto.indexOf("@") != -1) { // indexOf valdrá -1 si no encuentra el char/string
+                    alert("El email es correcto.");
+                } else {
+                    alert("El email no es correcto (falta @).");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

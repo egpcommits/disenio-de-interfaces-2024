@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado 03</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        // 3-Imprime en la consola el código de la tecla presionada en un campo de texto.
+        $(document).ready(function () {
+            $(document).on("keypress", function (ev) {
+                console.log(ev.charCode);
+            });
+        });
+    </script>
+</body>
+</html>

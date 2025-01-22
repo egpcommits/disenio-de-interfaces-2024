@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado 08</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <input type="text" id="busqueda">
+    <script>
+        // 8-Detecta cuando se presiona una tecla en un campo de texto con id #busqueda y muestra un mensaje en consola.
+        $(document).ready(function () {
+            $("#busqueda").on("keydown", function (ev) {
+                console.log(`La tecla presionada es: ${ev.key}.`);
+            });
+        });
+    </script>
+</body>
+</html>

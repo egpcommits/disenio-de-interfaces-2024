@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado 06</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <input type="text" id="texto">
+    <script>
+        // 6-Añadir un evento keydown a un campo de entrada que muestre el carácter que se ha escrito.
+        $(document).ready(function () {
+            $("#texto").on("keydown", function (ev) {
+                alert(ev.key);
+                $("#texto").val("");
+            });
+        });
+    </script>
+</body>
+</html>
