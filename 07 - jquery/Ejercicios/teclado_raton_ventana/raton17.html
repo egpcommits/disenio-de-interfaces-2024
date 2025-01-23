@@ -22,12 +22,13 @@
 </head>
 <body>
     <div id="area">
-        <img src="../imagenes/al.jpg" id="fotillo">
+        <img src="../jQueryUI/imagenes/al.jpg" id="fotillo">
     </div>
     <script>
         // 17-Haz que una imagen con id #foto se mueva con el ratón dentro de un contenedor con id #area.
             $(document).ready(function () {
-                $("#fotillo").draggable({revert : true});
+                //$("#fotillo").draggable({revert : true});
+                $("#fotillo").draggable();
             });
     </script>
 </body>

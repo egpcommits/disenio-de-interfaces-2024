@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery 23</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.14.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.14.1/jquery-ui.js"></script>
+    <style>
+        #area {
+            background-color: powderblue;
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area"></div>
+    <script>
+        // 23-Haz que un elemento sea resizable solo horizontalmente.
+            $(document).ready(function () {
+                $(function () {
+                    $("#area").resizable({
+                        handles: 'e, w'
+                    });
+                });
+            });
+    </script>
+</body>
+</html>
