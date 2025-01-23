@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raton 11</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <style>
+        #area {
+            background-color: papayawhip;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area"></div>
+    <script>
+        // 11-Detecta cuando el usuario pasa el ratón sobre un <div> con id #area y cambia su fondo a verde.
+            $(document).ready(function () {
+                $("#area").on("mouseover", function (ev) {
+                    $("#area").css("background-color", "powderblue");
+                });
+            });
+    </script>
+</body>
+</html>

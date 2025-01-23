@@ -7,13 +7,21 @@
     <script src="../../jquery-3.7.1.min.js"></script>
 </head>
 <body>
-    <input type="text" id="campo">
-    <div><p></p> caracteres restantes.</div>
+    <input type="text" id="campo" maxlength="10">
+    <input type="submit" id="boton">
+    <div>Caracteres restantes:</div>
     <script>
         let restante = 0;
         // 9-Muestra el número de caracteres restantes cuando el usuario escribe en un campo con un límite de 10 caracteres.
         $(document).ready(function () {
-
+            let tamanoTotal = $("#campo").attr("maxlength");
+            let tamanoCadena = $("#campo").attr("textlength");
+            
+            $("#boton").on("click", function () {
+                console.log(tamanoTotal - tamanoCadena);
+            })
+            // console.log($("#campo").attr("textlength"))
+            
         });
     </script>
 </body>

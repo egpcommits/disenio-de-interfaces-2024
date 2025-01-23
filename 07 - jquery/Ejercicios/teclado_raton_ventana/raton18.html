@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raton 18</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p style="font-size: 200%;">Doble click aquí</p>
+    <script>
+        // 18-Detecta cuando el usuario hace doble clic sobre un <p> y cambia su texto.
+            $(document).ready(function () {
+                $("p").on("dblclick", function () {
+                    $("p").text("Sorpresa!");
+                });
+            });
+    </script>
+</body>
+</html>

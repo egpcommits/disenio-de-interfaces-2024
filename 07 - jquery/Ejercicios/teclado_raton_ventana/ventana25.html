@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana 25</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <script>
+        // 25-Muestra el tamaño de la ventana cada vez que se redimensiona.
+            $(document).ready(function () {
+                $(window).resize(function () {
+                    console.log(`Horizontal: ${$(window).width()}, vertical: ${$(window).height()}`)
+                });
+            });
+    </script>
+</body>
+</html>

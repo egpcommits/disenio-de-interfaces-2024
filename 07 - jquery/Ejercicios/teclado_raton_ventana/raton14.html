@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raton 14</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <style>
+        .item {
+            background-color: powderblue;
+            width: 50px;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <p class="item">Texto</p>
+    <script>
+        // 14-Haz que un <p> con clase .item se haga más grande al pasar el ratón por encima.
+            $(document).ready(function () {
+                $(".item").on("mouseover", function () {
+                    $(".item").css({"width" : "200px", "height" : "200px"});
+                });
+
+                $(".item").on("mouseout", function () {
+                    $(".item").css({"width" : "100px", "height" : "100px"});
+                });
+            });
+    </script>
+</body>
+</html>

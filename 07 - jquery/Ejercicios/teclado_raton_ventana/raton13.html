@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raton 13</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <style>
+        #contenedor {
+            background-color: powderblue;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contenedor">
+        <p id="texto"></p>
+    </div>
+    <script>
+        // 13-Detecta el movimiento del ratón sobre un área con id #contenedor y muestra las coordenadas del ratón en consola.
+            $(document).ready(function () {
+                $("#contenedor").on("mousemove", function (ev) {
+                    $("#texto").text(ev.pageX + ", " + ev.pageY);
+                });
+
+                $("#contenedor").on("mouseout", function (ev) {
+                    $("#texto").text("");
+                });
+            });
+    </script>
+</body>
+</html>

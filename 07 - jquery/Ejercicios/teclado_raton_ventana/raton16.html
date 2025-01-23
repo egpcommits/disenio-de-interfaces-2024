@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raton 16</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <style>
+        div {
+            background-color: powderblue;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <script>
+        // 16-Detecta el clic derecho del ratón sobre un <span> y muestra un mensaje.
+            $(document).ready(function () {
+                $("div").on("mousedown", function (ev) {
+                    if (ev.which == 1) alert("Se ha hecho click izquierdo sobre el div");
+                    else if (ev.which == 2) alert("Se ha hecho click con la rueda sobre el div");
+                    else if (ev.which == 3) alert("Se ha hecho click derecho sobre el div");
+                });
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raton 12</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <style>
+        #area {
+            background-color: papayawhip;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <p id="texto">No clicado</p>
+    <input type="submit" id="boton" value="Haz click">
+    <script>
+        // 12-Cuando el usuario hace clic en un <button>, cambia el texto a "Clicado".
+            $(document).ready(function () {
+                $("#boton").on("click", function () {
+                    $("#texto").text("Clicado");
+                })
+            });
+    </script>
+</body>
+</html>

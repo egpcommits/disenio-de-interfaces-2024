@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raton 15</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <style>
+        #area {
+            background-color: powderblue;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <div id="area"></div>
+    <script>
+        // 15-Haz que un <div> cambie de color cuando el ratón entre y vuelva al color original cuando el ratón salga.
+            $(document).ready(function () {
+                $("#area").on("mouseover", function (ev) {
+                    $("#area").css("background-color", "#EC5578");
+                });
+                
+                $("#area").on("mouseout", function () {
+                    $("#area").css("background-color", "powderblue");
+                });
+            });
+    </script>
+</body>
+</html>

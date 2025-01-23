@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teclado 10</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <p>Textito chulo</p>
+    <script>
+        // 10-Detecta cuando el usuario presiona la tecla "Shift" y cambia el color de fondo de un <p>.
+            $(document).ready(function () {
+                $(document).on("keydown", function (ev) {
+                    if (ev.key == "Shift") {
+                        $("p").css("background-color", "red"); 
+                    }
+                });
+            })
+    </script>
+</body>
+</html>

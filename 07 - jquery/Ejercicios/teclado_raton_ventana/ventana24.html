@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana 24</title>
+    <script src="../../jquery-3.7.1.min.js"></script>
+    <style>
+        #caja {background-color: palegreen;}
+    </style>
+</head>
+<body>
+    <div id="caja"></div>
+    <script>
+        // 24-Haz que el contenido de un <div> se adapte al tamaño de la ventana.
+            $(document).ready(function () {
+                $(window).resize(function () {
+                    $("#caja").css("width", $(window).width());
+                    $("#caja").css("height", $(window).height());
+                });
+            });
+    </script>
+</body>
+</html>
