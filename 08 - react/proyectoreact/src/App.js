@@ -1,26 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
-import sharingan from './imagenes/mangekyou_sharingan_kakashi.png';
+import Iterador from './Iterador.js';
+import Selector from './Selector.js';
+import Sumar from './Sumar.js';
+import Contador from './Contador.js';
+import Galeria from './Galeria.js';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={sharingan} className="App-logo" alt="logo" />
-        <p>
-          {/* Edit <code>src/App.js</code> and save to reload. */}
-          KAKASHI SUPREMACY
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+function App() { //El nombre de la funcion tiene que ser igual que el nombre del archivo
+  return ( //el return, si tiene más de un objeto, da error. Si tenemos varios, hay que usar un contenedor
+    <> {/*contenedor*/}
+
+      {/*se crea un objeto iterador. Se pueden crear todos los que se quiera*/}
+      <Iterador/> 
+
+      <br/><br/>
+
+      {/*se crea un objeto selector. Se pueden crear todos los que se quiera*/}
+      <Selector/>
+
+      <br/><br/>
+      <Sumar/>
+
+      <br/><br/>
+      <Contador/>
+
+      <br/><br/>
+      <Galeria/>
+    </>
   );
 }
 
